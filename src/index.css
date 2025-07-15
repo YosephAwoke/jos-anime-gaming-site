@@ -1,0 +1,67 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+body {
+  font-family: 'General Sans', sans-serif;
+  width: 100dvw;
+  background-color: #dfdff0;
+  overflow-x: hidden;
+}
+
+@layer base {
+
+  @font-face {
+    font-family: "circular-web";
+    src: url('E:\FULL-STACK-PROJECTS\jos-anime-gaming-site\public\fonts\circularweb-book.woff2') format('woff2'),
+         
+  }
+
+  @font-face {
+    font-family: 'general' ;
+    src: url("/fonts/general.woff2") format('woff2'),
+        
+  }
+
+  @font-face {
+    font-family: 'robert-medium';
+    src: url("/fonts/robert-medium.woff2") format('woff2'),
+         
+  }
+
+  @font-face {
+    font-family: 'robert-regular';
+    src: url("/fonts/robert-regular.woff2") format('woff2'),
+         
+  }
+  body {
+    @apply bg-gray-100 text-gray-900;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-bold text-gray-800;
+  }
+
+  p {
+    @apply text-gray-700;
+  }
+}
+
+@layer utilities {
+  .container {
+    @apply mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .btn {
+    @apply inline-block px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 transition;
+  }
+
+  .card {
+    @apply bg-white shadow-md rounded-lg p-6;
+  }
+
+  .text-center {
+    @apply text-center;
+  }
+}
