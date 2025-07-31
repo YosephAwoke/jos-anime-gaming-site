@@ -1,4 +1,8 @@
-import {  useRef, useState } from "react";
+import { useRef, useState } from "react";
+import Button from "./Button";
+import { TiLocationArrow } from "react-icons/ti";
+import { useGSAP } from "@gsap/react";
+import gsap from "gsap";
 
 const Hero = () => {
   const [currentIndex, setCurrentIndex] = useState(1);
@@ -11,7 +15,7 @@ const Hero = () => {
 
   const handleVideoLoaded = () => {
     setLoadedVideos((prev) => prev + 1);
-  }
+  };
 
   const upcomingVideoIndex = (currentIndex % totalVideos) + 1;
 
@@ -19,6 +23,34 @@ const Hero = () => {
     setHasClicked(true);
     setCurrentIndex(upcomingVideoIndex);
   };
+
+  useGSAP(
+    () => {
+      if (hasClicked) {
+        gsap.set("#next-video", {
+          visibility: "visible",
+        });
+        gsap.to("#next-video", {
+          transformOrigin: "center center",
+          scale: 1,
+          width: "100%",
+          height: "100%",
+          duration: 1,
+          ease: "power1.inOut",
+          onStart: () => nextVideoRef.current.play(),
+        });
+
+        gsap.from("#current-video", {
+          transformOrigin: "center center",
+          scale: 0,
+
+          duration: 1.5,
+          ease: "power1.inOut",
+        });
+      }
+    },
+    { dependencies: [currentIndex], revertOnUpdate: true }
+  );
 
   const getVideoSrc = (index) => `videos/hero-${index}.mp4`;
   return (
@@ -29,15 +61,20 @@ const Hero = () => {
       >
         <div className="">
           <div className="mask-clip-path absolute-center absolute z-50 size-64 cursor-pointer overflow-hidden rounded-lg ">
-            <div onClick={handleMiniVdClick} className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100">
-              <video ref={nextVideoRef}
-              src={getVideoSrc(upcomingVideoIndex)}
-              loop
-              muted
-              id="current-video"
-              className="size-64 origin-center scale-150 object-cover object-center"
-              onLoadedData={handleVideoLoaded}
-              /></div>
+            <div
+              onClick={handleMiniVdClick}
+              className="origin-center scale-50 opacity-0 transition-all duration-500 ease-in hover:scale-100 hover:opacity-100"
+            >
+              <video
+                ref={nextVideoRef}
+                src={getVideoSrc(upcomingVideoIndex)}
+                loop
+                muted
+                id="current-video"
+                className="size-64 origin-center scale-150 object-cover object-center"
+                onLoadedData={handleVideoLoaded}
+              />
+            </div>
           </div>
           <video
             ref={nextVideoRef}
@@ -50,7 +87,9 @@ const Hero = () => {
           />
 
           <video
-            src={getVideoSrc(currentIndex === totalVideos  - 1 ? 1 : currentIndex)}
+            src={getVideoSrc(
+              currentIndex === totalVideos - 1 ? 1 : currentIndex
+            )}
             autoPlay
             loop
             muted
@@ -72,9 +111,18 @@ const Hero = () => {
               Enter the Metagame Layer <br />
               Unlish the Play Economy
             </p>
+            <Button
+              id="watch-trailer"
+              title="Watch Trailer"
+              leftIcon={<TiLocationArrow />}
+              containerClass="!bg-yellow-300 flex-center gap-1"
+            />
           </div>
         </div>
       </div>
+      <h1 className="special-font hero-heading absolute bottom-5 right-5  text-black">
+        G<b>a</b>ming
+      </h1>
     </div>
   );
 };
