@@ -1,12 +1,58 @@
-# React + Vite
+# 🎮 Jos Anime Gaming Site
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Hero Banner](https://img.shields.io/badge/React-2024-blue?logo=react) ![GSAP](https://img.shields.io/badge/GSAP-Animation-green?logo=greensock) ![Anime](https://img.shields.io/badge/Anime-Gaming-purple?logo=steam) ![License](https://img.shields.io/github/license/yourusername/jos-anime-gaming-site)
 
-Currently, two official plugins are available:
+> **A visually stunning, interactive anime gaming portal built with React, GSAP, and modern web technologies.**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## Expanding the ESLint configuration
+## 🚀 Features
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- ✨ **Animated Hero Section** with interactive video transitions
+- 🎥 **Dynamic Video Previews** using GSAP for smooth animations
+- 🎮 **Gaming & Anime Themed UI** with custom fonts and vibrant colors
+- ⚡ **Fast & Responsive** design for all devices
+- 🛠️ **Reusable Components** (Buttons, Video Frames, etc.)
+- 🌙 **Modern Stack**: React, GSAP, TailwindCSS, React Icons
+
+---
+
+## 📸 Preview
+
+![Jos Anime Gaming Site Screenshot](./public/preview-hero.png)
+
+(./public/preview-about.png).
+
+(./public/preview-about.png).
+
+
+
+
+---
+
+## 🛠️ Tech Stack
+
+- [React](https://react.dev/) ⚛️
+- [GSAP](https://greensock.com/gsap/) 🎬
+- [TailwindCSS](https://tailwindcss.com/) 💨
+- [React Icons](https://react-icons.github.io/react-icons/) 🎨
+
+---
+
+## 📄 License
+
+[MIT](LICENSE)
+
+---
+
+## 🙏 Credits
+
+- [GSAP](https://greensock.com/gsap/)
+- [React](https://react.dev/)
+- [TailwindCSS](https://tailwindcss.com/)
+- [JsMastry] (https://jsmastery.com/)
+- [Anime & Gaming Art](#)
+
+---
+
+> _Made with ❤️ by Jos_
