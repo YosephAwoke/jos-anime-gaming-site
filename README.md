@@ -21,10 +21,6 @@
 
 ![Jos Anime Gaming Site Screenshot](./public/preview-hero.png)
 
-(./public/preview-about.png).
-
-(./public/preview-about.png).
-
 
 
 
